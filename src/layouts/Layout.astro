@@ -1,5 +1,6 @@
 ---
 // Supports weights 300-700
+import Header from '@components/Header.astro';
 import '@fontsource-variable/space-grotesk';
 import '@fontsource/rubik-mono-one';
 
@@ -21,6 +22,7 @@ const { description, title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	</head>
 	<body>
+		<Header />
 		<slot />
 	</body>
 </html>
