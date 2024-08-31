@@ -1,6 +1,7 @@
 ---
 // Supports weights 300-700
 import '@fontsource-variable/space-grotesk';
+import '@fontsource/rubik-mono-one';
 
 interface Props {
 	description: string,
@@ -24,6 +25,19 @@ const { description, title } = Astro.props;
 	</body>
 </html>
 <style is:global>
+	@font-face {
+		font-family: 'Rubik Mono One';
+		font-weight: 600;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Rubik Mono One';
+		font-weight: 900;
+		font-style: normal;
+		font-display: swap;
+	}
 	
 	html {
 		font-family: 'Space Grotesk Variable', sans-serif;
