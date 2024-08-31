@@ -11,6 +11,9 @@ importers:
       '@astrojs/check':
         specifier: ^0.9.3
         version: 0.9.3(typescript@5.5.4)
+      '@fontsource-variable/space-grotesk':
+        specifier: ^5.0.19
+        version: 5.0.19
       astro:
         specifier: ^4.15.1
         version: 4.15.1(rollup@4.21.2)(typescript@5.5.4)
@@ -314,6 +317,9 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource-variable/space-grotesk@5.0.19':
+    resolution: {integrity: sha512-uYyY1jqW+71NkPCp0P6dwEcV6uO4MEiAZ5JylhrHbMMA7C2N0uO6EZUnq7rOMZT4e58Izia5Hy5HPZ18dan3ew==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -2168,6 +2174,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.21.5':
     optional: true
+
+  '@fontsource-variable/space-grotesk@5.0.19': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
