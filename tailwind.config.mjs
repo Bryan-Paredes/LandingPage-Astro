@@ -8,6 +8,9 @@ export default {
 			},
 			fontFamily: {
 				"rubik": ['Rubik Mono One', "sans-serif"]
+			},
+			transitionTimingFunction : {
+				'project-timing': 'cubic-bezier(0.36, 0.99, 0.11, 0.95)'
 			}
 		},
 	},
