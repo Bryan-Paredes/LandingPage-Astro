@@ -1,3 +1,137 @@
-<section>
-    Projects
+---
+const PROJECTS = [
+    {
+        title: "La gala de Sr. Croma",
+        subtitle: "Premios a los invisibles del cine",
+        description: "El evento de presentacion de blabla",
+        image: '/projects/1.png',
+        link: 'https://google.com',
+        info: [
+            {
+                value: '100M',
+                label: 'Viewers unicos'
+            },
+            {
+                value: '40M',
+                label: 'Pico de espectadores'
+            },
+            {
+                value: '260K',
+                label: 'Audiencia Media'
+            },
+            {
+                value: '5M',
+                label: 'Likes de Instagram'
+            }
+        ]
+    },
+    {
+        title: "La gala de Sr. Croma",
+        subtitle: "Premios a los invisibles del cine",
+        description: "El evento de presentacion de blabla",
+        image: '/projects/1.png',
+        link: 'https://google.com',
+        info: [
+            {
+                value: '100M',
+                label: 'Viewers unicos'
+            },
+            {
+                value: '40M',
+                label: 'Pico de espectadores'
+            },
+            {
+                value: '260K',
+                label: 'Audiencia Media'
+            },
+            {
+                value: '5M',
+                label: 'Likes de Instagram'
+            }
+        ]
+    },
+    {
+        title: "La gala de Sr. Croma",
+        subtitle: "Premios a los invisibles del cine",
+        description: "El evento de presentacion de blabla",
+        image: '/projects/1.png',
+        link: 'https://google.com',
+        info: [
+            {
+                value: '100M',
+                label: 'Viewers unicos'
+            },
+            {
+                value: '40M',
+                label: 'Pico de espectadores'
+            },
+            {
+                value: '260K',
+                label: 'Audiencia Media'
+            },
+            {
+                value: '5M',
+                label: 'Likes de Instagram'
+            }
+        ]
+    },
+    {
+        title: "La gala de Sr. Croma",
+        subtitle: "Premios a los invisibles del cine",
+        description: "El evento de presentacion de blabla",
+        image: '/projects/1.png',
+        link: 'https://google.com',
+        info: [
+            {
+                value: '100M',
+                label: 'Viewers unicos'
+            },
+            {
+                value: '40M',
+                label: 'Pico de espectadores'
+            },
+            {
+                value: '260K',
+                label: 'Audiencia Media'
+            },
+            {
+                value: '5M',
+                label: 'Likes de Instagram'
+            }
+        ]
+    }
+]
+---
+
+
+<section class="min-h-dvh">
+    <h2>
+        <img 
+            class="w-full h-auto scale-100" 
+            src="/titles/proyectos.svg" 
+            alt="Proyectos"
+        >
+    </h2>
+    
+    {
+        PROJECTS.map((projects) => (
+        <article class="relative border-t-2 last:border-y-2 border-black">
+            <button class="group pl-[60px] ml-14">
+                <div class=" -z-10 absolute left-0 h-full w-[60px] bg-primary-green
+                group-hover:w-full transition-all duration-1000 ease-project-timing">
+                </div>
+            <div class="py-8">
+                <h3 class="uppercase tracking-tighter text-8xl font-bold group-hover:translate-x-8
+                duration-1000 ease-project-timing transition-transform">
+                    {projects.title}
+                </h3>
+                <h4 class="uppercase text-2xl text-left group-hover:opacity-0
+                transition-opacity duration-1000 ease-project-timing">
+                    {projects.subtitle}
+                </h4>
+            </div>
+            </button>
+        </article>
+        ))
+    }
 </section>
