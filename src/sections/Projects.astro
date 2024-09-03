@@ -1,4 +1,6 @@
 ---
+import SectionTitle from "@components/SectionTitle.astro"
+
 const PROJECTS = [
     {
         title: "La gala de Sr. Croma",
@@ -104,13 +106,9 @@ const PROJECTS = [
 ---
 
 
-<section class="min-h-dvh">
+<section>
     <h2>
-        <img 
-            class="w-full h-auto scale-100" 
-            src="/titles/proyectos.svg" 
-            alt="Proyectos"
-        >
+        <SectionTitle image="proyectos" title="Proyectos" />
     </h2>
     
     {
