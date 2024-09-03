@@ -1,0 +1,11 @@
+---
+const { className, image, title } = Astro.props
+---
+
+<h2 class="mb-6">
+    <img 
+        class={`w-full h-auto ${className}`}
+        src={`/titles/${image}.svg`}
+        alt={title}
+    >
+</h2>
