@@ -1,3 +1,32 @@
-<section>
-    Team
+<section class="w-full flex overflow-hidden relative">
+  <div id="ubicados" class="flex -ml-10">
+    <img src="/team/team.svg" alt="Ubicados" />
+    <img src="/team/team.svg" alt="Ubicados" />
+  </div>
+  <div class="absolute inset-0 flex justify-center items-center">
+    <button
+      class="uppercase text-transparent hover:text-black text-2xl font-bold tracking-tighter
+            text-center rounded-full w-72 h-72 px-20
+            border-primary-green border-2 border-solid
+            hover:bg-primary-green
+            transition-all duration-700 ease-project-timing"
+    >
+      Quienes somos?
+    </button>
+  </div>
 </section>
+
+<style>
+  img {
+    width: 240vw;
+    max-width: 240vw;
+  }
+  #ubicados {
+    transition-duration: 8s;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.32, 0.01, 0.64, 0.99);
+  }
+  section:hover #ubicados {
+    transform: translateX(-50%);
+  }
+</style>
