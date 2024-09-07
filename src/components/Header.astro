@@ -2,50 +2,111 @@
 import Logo from "./Logo.astro";
 ---
 
-<header id="landing-header" class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center h-16 px-8">
-    <a href="/">
-        <Logo />
-    </a>
-    <div>
-        <h1 class="uppercase text-current">Landing Page Astro</h1>
-
-    </div>
+<header
+  id="landing-header"
+  class="w-full fixed top-0 left-0 right-0 z-50 flex justify-between items-center h-16 px-5"
+>
+  <a href="/">
+    <Logo />
+  </a>
+  <div class="flex items-center justify-center gap-x-4">
+    <h1 class="uppercase text-current text-3xl">
+      Agencia de talento multiplataforma
+    </h1>
+    <button id="toggle-volume" class="hover:scale-125">
+      <svg
+        id="disable-volume"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="hidden w-8 h-8"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M15 8a5 5 0 0 1 0 8" fill="white"></path>
+        <path d="M17.7 5a9 9 0 0 1 0 14"></path>
+        <path
+          d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5"
+          fill="white"
+        >
+        </path>
+      </svg>
+      <svg
+        id="enable-volume"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="w-8 h-8"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path
+          d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5"
+          fill="white"></path>
+        <path d="M16 10l4 4m0 -4l-4 4"></path>
+      </svg>
+    </button>
+  </div>
 </header>
 
 <style>
-    header {
-        svg, h1 {
-            color: white;
-            transition: color 0.3s ease-in-out;
-        }
-        &.light {
-            svg, h1 {
-                color: black;
-            }
-        }
+  header {
+    svg,
+    h1 {
+      color: white;
+      transition: color 0.3s ease-in-out;
     }
+    &.light {
+      background-color: white;
+      svg,
+      h1 {
+        color: black;
+      }
+    }
+  }
 </style>
 
 <script>
-    const $header = document.querySelector('#landing-header') as HTMLElement
-    const $$sectionElements = document.querySelectorAll(
-        "section[data-header-theme='dark']"
-    )
+  const $header = document.querySelector("#landing-header") as HTMLElement;
+  const $$sectionElements = document.querySelectorAll(
+    "section[data-header-theme='dark']"
+  );
 
-    const intersectionOptions = {
-        root: null, // elemento <body>
-        rootMargin: "0px",
-        threshold: 0.2,
-    }
+  const $enableVolume = document.querySelector("#enable-volume") as HTMLElement;
+  const $disableVolume = document.querySelector(
+    "#disable-volume"
+  ) as HTMLElement;
+  const $toggleVolume = document.querySelector("#toggle-volume") as HTMLElement;
+  const $video = document.querySelector("#hero-video") as HTMLVideoElement;
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            
-            const lightMode = !entry.isIntersecting
-            $header.classList.toggle('light', lightMode)
-            
-        })
-    }, intersectionOptions)
+  let isEnabled = false;
+  $toggleVolume.addEventListener("click", () => {
+    isEnabled = !isEnabled;
+    $enableVolume.classList.toggle("hidden", !isEnabled);
+    $disableVolume.classList.toggle("hidden", isEnabled);
+    $video.muted = isEnabled;
+  });
 
-    $$sectionElements.forEach(section => observer.observe(section))
+  const intersectionOptions = {
+    root: null, // elemento <body>
+    rootMargin: "0px",
+    threshold: 0.2,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const lightMode = !entry.isIntersecting;
+      $header.classList.toggle("light", lightMode);
+    });
+  }, intersectionOptions);
+
+  $$sectionElements.forEach((section) => observer.observe(section));
 </script>
