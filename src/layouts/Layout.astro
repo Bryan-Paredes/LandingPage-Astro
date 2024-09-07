@@ -1,12 +1,12 @@
 ---
 // Supports weights 300-700
-import Header from '@components/Header.astro';
-import '@fontsource-variable/space-grotesk';
-import '@fontsource/rubik-mono-one';
+import Header from "@components/Header.astro";
+import "@fontsource-variable/space-grotesk";
+import "@fontsource/rubik-mono-one";
 
 interface Props {
-	description: string,
-	title: string;
+  description: string;
+  title: string;
 }
 
 const { description, title } = Astro.props;
@@ -14,36 +14,40 @@ const { description, title } = Astro.props;
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<title>{title}</title>
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	</head>
-	<body>
-		<Header />
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <Header />
+    <slot />
+  </body>
 </html>
 <style is:global>
-	@font-face {
-		font-family: 'Rubik Mono One';
-		font-weight: 600;
-		font-style: normal;
-		font-display: swap;
-	}
+  @font-face {
+    font-family: "Rubik Mono One";
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
 
-	@font-face {
-		font-family: 'Rubik Mono One';
-		font-weight: 900;
-		font-style: normal;
-		font-display: swap;
-	}
-	
-	html {
-		font-family: 'Space Grotesk Variable', sans-serif;
-		background: #fff;
-	}
+  @font-face {
+    font-family: "Rubik Mono One";
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
 
+  html {
+    box-sizing: border-box;
+    font-family: "Space Grotesk Variable", sans-serif;
+    background: #fff;
+  }
+  body {
+    max-width: 100vw;
+    width: 100%;
+  }
 </style>
