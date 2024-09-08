@@ -312,14 +312,14 @@ const PROJECTS = [
   const $backButton = document.getElementById("button-back") as HTMLElement;
 
   const $buttons = $projectList.querySelectorAll("button");
-  $buttons.forEach((button, index) => {
-    button.addEventListener("click", (e) => {
+  $buttons.forEach((button) => {
+    button.addEventListener("click", () => {
       $projectView.classList.add("show");
       $projectContainer.classList.add("slide-in");
     });
   });
 
-  $backButton.addEventListener("click", (e) => {
+  $backButton.addEventListener("click", () => {
     $projectView.classList.remove("show");
     $projectContainer.classList.remove("slide-in");
   });

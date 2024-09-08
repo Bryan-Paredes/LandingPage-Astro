@@ -116,7 +116,7 @@
 </style>
 
 <script>
-  import { timeline, scroll } from "motion";
+  import { timeline } from "motion";
   import type { transform } from "typescript";
 
   const sequence = [
@@ -204,10 +204,13 @@
     ],
   ];
 
-  const onScroll = timeline(sequence);
+  const onScroll = { start: timeline(sequence) };
 
-  scroll(onScroll, {
-    target: document.querySelector("#text-stop"),
-    offset: ["-400px", "end end"],
+  scroll({
+    onScroll,
+    scrollOptions: {
+      target: document.querySelector("#text-stop"),
+      offset: ["-400px", "end end"],
+    },
   });
 </script>
