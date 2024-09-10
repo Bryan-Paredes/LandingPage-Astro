@@ -116,10 +116,9 @@
 </style>
 
 <script>
-  import { timeline } from "motion";
-  import type { transform } from "typescript";
+  import { timeline, scroll, type TimelineDefinition } from "motion";
 
-  const sequence = [
+  const sequence: TimelineDefinition = [
     [
       "#step-1 h3 span:first-child",
       { transform: "translateY(0%)" },
@@ -204,13 +203,10 @@
     ],
   ];
 
-  const onScroll = { start: timeline(sequence) };
+  const onScroll = timeline(sequence);
 
-  scroll({
-    onScroll,
-    scrollOptions: {
-      target: document.querySelector("#text-stop"),
-      offset: ["-400px", "end end"],
-    },
+  scroll(onScroll, {
+    target: document.querySelector("#text-stop") as HTMLElement,
+    offset: ["-300px", "end end"],
   });
 </script>
